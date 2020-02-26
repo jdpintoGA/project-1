@@ -7,7 +7,7 @@ header,
 footer {
   display: flex;
   justify-content: center;
-  height: 5vw;
+  height: 7vw;
   width: 100vw;
 }
 button {
@@ -44,27 +44,33 @@ button:hover {
   }
 }
 .modified {
-  margin-top: 0px;
-  font-size: large;
+  color: azure;
+  margin-top: 2%;
+  font-size: larger;
   font-family: 'Monoton';
 }
-p {
+.btnp {
+  position: absolute;
   font-family: 'monoton';
+  color: black;
+  font-size: large;
 }
 
 body {
+  background-color: rgb(83, 83, 83);
   box-sizing: border-box;
   display: block;
   height: 100vh;
   width: 100vw;
 }
 main {
+  display: flex;
+  justify-content: center;
   background-image: url(https://media.giphy.com/media/l46CzTfhwdgK58v2U/giphy.gif);
+  background-size: cover;
   border: 10px inset rgba(205, 207, 200, 0.733);
   height: 70vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
 }
 
 :root {
@@ -73,28 +79,24 @@ main {
 }
 
 #game {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45vw;
-  height: 65vh;
+  background-color: rgba(236, 154, 154, 0.5);
+  width: 70vh;
+  height: 100%;
 }
 
 .large-grid {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
-  margin-top: 15px;
-  width: 70vw;
-  height: 70vh;
-  padding: 10px;
+  width: inherit;
+  height: inherit;
   grid-gap: 5px;
 }
 
 .large-cell {
   width: 100%;
   height: 100%;
-  background-color: firebrick;
+  background-color: rgb(255, 251, 0);
 }
 
 .small-group-cells {
@@ -112,7 +114,7 @@ main {
 }
 /* cell */
 .small-cell {
-  background-color: dimgray;
+  background-color: rgb(77, 77, 77);
   position: relative;
   display: flex;
   border: 1px solid black;
@@ -167,5 +169,5 @@ main {
 .small-cell.circle::after {
   width: calc(var(--mark-size) * 1.2);
   height: calc(var(--mark-size) * 1.2);
-  background-color: dimgray;
+  background-color: rgb(77, 77, 77);
 }

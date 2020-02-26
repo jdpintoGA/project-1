@@ -3,12 +3,20 @@ function gamegrid() {
   //declaring variables
   const xClass = 'x'
   const circleClass = 'circle'
-  const cellElements = document.querySelectorAll('.small-cell')
+  const cellElements = Array.from(document.querySelectorAll('.small-cell'))
+
+  const newArray = cellElements.map(element => {
+    return element.id
+  })
+
+  console.log(newArray)
+
   const board = document.getElementsByClassName('small-group-cells')
   let player
   let Owins = []
   let Xwins = []
   const winningCombos = [
+    //1st
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -26,6 +34,15 @@ function gamegrid() {
     [11, 14, 17],
     [9, 13, 17],
     [11, 13, 15],
+    //3rd
+    [16, 17, 18],
+    [19, 20, 21],
+    [22, 23, 24],
+    [16, 19, 22],
+    [17, 20, 23],
+    [18, 21, 24],
+    [16, 20, 24],
+    [18, 20, 22],
   ]
 
   //
@@ -43,11 +60,7 @@ function gamegrid() {
     console.log(cell, currentClass)
     //check win
     if (wins(currentClass)) {
-      if (swapTurn() === player) {
-        console.log('o win')
-      } else {
-        console.log('x win')
-      }
+      console.log(player)
     }
     //check draw
 

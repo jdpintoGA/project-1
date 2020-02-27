@@ -1,3 +1,6 @@
+let suggestedColour = false
+let runningCheck = []
+
 //util function
 const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
@@ -5,6 +8,7 @@ const chunk = (arr, size) =>
   )
 
 //the game
+
 function gamegrid() {
   //declaring variables
   let allowedParentIndex = null
@@ -12,6 +16,7 @@ function gamegrid() {
   const xClass = 'ex'
   const circleClass = 'circle'
   let cellElements = Array.from(document.querySelectorAll('.small-cell'))
+  let playHere = document.getElementById(allowedParentIndex)
 
   const testGameArray = chunk(
     cellElements.map(() => emptyClass),
@@ -59,22 +64,40 @@ function gamegrid() {
       // Add O or X to the element
       gameArray[parentIndex].cells[childIndex] = currentClass
       cell.classList.add(currentClass)
-
       // Capture which child index we clicked last
       allowedParentIndex = childIndex
+      //highlighting valid move
+      playHere = document.getElementById(allowedParentIndex)
+      removePrevious = document.getElementById(runningCheck[0])
+
+      if (suggestedColour) {
+        removePrevious.classList.remove('highlight')
+        suggestedColour = false
+      }
+      playHere.classList.add('highlight')
+      runningCheck.unshift(allowedParentIndex)
+      console.log(runningCheck)
+      suggestedColour = true
+
+      // playHere.classList.add('highlight')
+      // setTimeout(() => {
+      //   playHere.classList.remove('highlight')
+      // }, 4000)
+      // allowHere()
 
       //check win
       if (wins(currentClass)) {
         gameArray[parentIndex].value = currentClass
-        console.log(player)
-        console.log(gameArray)
       }
 
       // Change Turn
       swapTurn()
     }
-    console.log(gameArray)
   }
+
+  //highlight
+  function allowHere() {}
+
   //swap turn
   function swapTurn() {
     player = !player
@@ -87,6 +110,7 @@ function gamegrid() {
         cellElements[index].classList.contains(currentClass),
       )
     })
+    console.log(currentClass)
   }
 }
 

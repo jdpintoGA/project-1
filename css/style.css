@@ -51,6 +51,7 @@ a.button:hover {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
+
 .modified {
   color: azure;
   margin-top: 2%;
@@ -190,4 +191,27 @@ main {
   width: calc(var(--mark-size) * 1.2);
   height: calc(var(--mark-size) * 1.2);
   background-color: rgb(77, 77, 77);
+}
+
+.highlight {
+  animation: pulseBorder 2s infinite;
+}
+@keyframes pulseBorder {
+  0% {
+    transform: scale(0.95);
+    box-sizing: 100% 100%;
+    border: 2px solid gold;
+  }
+
+  70% {
+    transform: scale(1);
+    box-sizing: 100% 100%;
+    border: 2px solid gold;
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-sizing: 100% 100%;
+    border: 2px solid gold;
+  }
 }

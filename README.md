@@ -2,16 +2,9 @@
 
 # Ultimate - Tic Tac Toe
 
-Layout: 9 small grids of 3x3 will make 1 big 3x3 grid // scratched....
-HTML version of board created!
-Css Grid
+# Rules
 
-Rules: X plays first in the center grid.
-next movement will be in the small grid equivalent to the position of the X,
-
-Ex: if layout is a grid made from small grids from 1 to 9 game starts in small grid number 5(center grid)
-if X plays in the top right corner of the grid (3), p2 will play in the small grid 3.
-Etc
+Conventional Tic Tac Toe rules taken to a another level, with proihibithions on where the moves are allowed to be played on.
 
 After every play, the cell played has to be blocked and refuse new input.
 when a sgrid has 3 in row a player is declared winner of that sgrid,
@@ -20,20 +13,48 @@ when 3 small grids in row share the same "winner", game is over and winner is re
 
 # Players
 
-Can do Array of x and o
+2 human player mode only.
 
-or IMG with class player 1
-and IMG with class player 2
+Player X and Player O have theyr marks injected by css styling.
 
 # Game logic
 
-create 9 separate 1 to 9 grids and EX : Player1 plays cell 2 of grid 1 Blocking(2-1), next play on grid 2.
-Player 2 plays cell 4 of grid 2, game goes to grid 4.
+Like its little brother, regular Tic Tac Toe, the Ultimate Tic Tac Toe, consists on having 3 marks in a row, being those rows horizontal, vertical or diagonal, although in ultimate TTT those 3 Marks will win a "grid" and so the player will only win the game once it gets 3 Won "grids" in a row of 3.
 
-# Grid At Start
+# Important code snippets
 
-Every Cell from all 9 grids(Entire board) are Available to be played On, After 1st Move:
+      function placemark(parentIndex, childIndex, currentClass, cell) {
+      if (
+      gameArray[parentIndex].cells[childIndex] === emptyClass &&
+      (parentIndex === allowedParentIndex || allowedParentIndex === null)
+      ) {
+      // Add O or X to the element
 
-# Every Grid(small grids) except the
+      gameArray[parentIndex].cells[childIndex] = currentClass
+      cell.classList.add(currentClass)
 
-(user input)
+      // Capture which child index we clicked last
+
+      allowedParentIndex = childIndex
+
+      //highlighting valid move
+
+      playHere = document.getElementById(allowedParentIndex)
+      removePrevious = document.getElementById(runningCheck[0])
+
+      if (suggestedColour) {
+        removePrevious.classList.remove('highlight')
+        suggestedColour = false
+      }
+      playHere.classList.add('highlight')
+      runningCheck.unshift(allowedParentIndex)
+      console.log(runningCheck)
+      suggestedColour = true
+
+# Software, Languagues and Libraries used
+
+-Html
+-Css
+-JavaScript
+-Google Fonts
+-Git and GitHub

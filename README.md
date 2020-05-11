@@ -2,6 +2,8 @@
 
 # Ultimate - Tic Tac Toe
 
+Visit the game in https://jdpintoga.github.io/project-1/
+
 # Rules
 
 Conventional Tic Tac Toe rules taken to a another level, with proihibithions on where the moves are allowed to be played on.

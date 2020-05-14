@@ -4,7 +4,7 @@ let runningCheck = []
 //util function
 const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
-    arr.slice(i * size, i * size + size),
+    arr.slice(i * size, i * size + size)
   )
 
 //the game
@@ -20,10 +20,10 @@ function gamegrid() {
 
   const testGameArray = chunk(
     cellElements.map(() => emptyClass),
-    9,
+    9
   )
 
-  const gameArray = testGameArray.map(gridElementArray => {
+  const gameArray = testGameArray.map((gridElementArray) => {
     return { cells: gridElementArray, value: emptyClass }
   })
 
@@ -39,14 +39,14 @@ function gamegrid() {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6],
+    [2, 4, 6]
   ]
 
   elements.forEach((cells, parentIndex) => {
     cells.forEach((cell, childIndex) =>
       cell.addEventListener('click', () =>
-        handleclick(parentIndex, childIndex, cell),
-      ),
+        handleclick(parentIndex, childIndex, cell)
+      )
     )
   })
 
@@ -105,9 +105,9 @@ function gamegrid() {
 
   //wins
   function wins(currentClass) {
-    return winningCombos.some(combination => {
-      return combination.every(index =>
-        cellElements[index].classList.contains(currentClass),
+    return winningCombos.some((combination) => {
+      return combination.every((index) =>
+        cellElements[index].classList.contains(currentClass)
       )
     })
     console.log(currentClass)

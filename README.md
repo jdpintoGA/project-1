@@ -15,7 +15,7 @@ Visit the game in https://jdpintoga.github.io/project-1/
 Conventional Tic Tac Toe rules taken to a another level, with proihibithions on where the moves are allowed to be played on.
 
 After every play, the cell played has to be blocked and refuse new input.
-when a sgrid has 3 in row a player is declared winner of that sgrid,
+when a grid has 3 in row a player is declared winner of that sgrid,
 although the remaining cells stay playable , so, no small grid will be blocked access even if theres already a gridwinner.
 when 3 small grids in row share the same "winner", game is over and winner is returned..
 
@@ -51,7 +51,7 @@ The most important function is displayed below, it's the fundamental clicking to
 
 Creation of X and O in CSS
 The following code snippet contains the created marks when;
-The hovered position is invalid, represented by a Forbidden cursor.
+the hovered position is invalid, represented by a Forbidden cursor.
 When valid, the current player will see his mark faded in the cell currently in hover, once clicked the mark gains a bolder visual.
 
 ```
@@ -112,7 +112,7 @@ When valid, the current player will see his mark faded in the cell currently in 
 }
 ```
 
-The following code snippet contains my approach to an helpfull UI tool creating an highlight to the grid where the next move is allowed.
+The following code snippet contains my approach to an helpful UI tool creating an highlight to the grid where the next move is allowed.
 
 ```
 
@@ -158,7 +158,7 @@ The Highlight class style can be found below.
 }
 ```
 
-# Software, Languagues and Libraries.
+# Software, Languages and Libraries.
 
 • Html5  
 • Css3  
@@ -166,10 +166,10 @@ The Highlight class style can be found below.
 • Google Fonts  
 • Git and GitHub
 
-# Future Development.
+# Future Developments.
 
-•Winning condition, currently the users receive no input of victory and the game never ends.
+• Winning condition, currently the users receive no input of victory and the game never ends.
 
-•AI player, with game logic being already created, an AI could be introduced to the platform, maybe even 2, AI vs AI could be interesting to study diferent game strategies.
+• AI player, with game logic being already created, an AI could be introduced to the platform, maybe even 2, AI vs AI could be interesting to study different game strategies.
 
 Because changing this project would affect the accuracy of what I achieved during the given deadline, I may create a copy and implement these ideas.
